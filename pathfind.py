@@ -22,7 +22,7 @@ if len(sys.argv) == 5:
 
 if __name__ == "__main__":
     window = core.Grid(window_size, density)
-    window.line_width = line_width
+    window.line_thickness = line_width
 
     found = False
     path = None
