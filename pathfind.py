@@ -1,12 +1,28 @@
 import sys
 
+if len(sys.argv) == 1:
+    print('Specify which algorithm to use!')
+    exit(1)
+
 if sys.argv[1] == '-dijkstra':
     from dijkstra import *
 elif sys.argv[1] == '-astar':
     from astar import *
+else:
+    print(f'1st argument specifies algorithm, {sys.argv[1]} is not a valid option!')
+
+window_size = 900
+density = 50
+line_width = 2
+
+if len(sys.argv) == 4:
+    window_size = int(sys.argv[2])
+    density = int(sys.argv[3])
+    line_width = int(sys.argv[4])
 
 if __name__ == "__main__":
-    window = core.Grid(900, 50)
+    window = core.Grid(window_size, density)
+    window.line_width = line_width
 
     found = False
     path = None

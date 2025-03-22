@@ -6,6 +6,10 @@ Then, to run the code you need to specify which algorithm to use with a console 
 `python pathfind.py -astar`\
 `python pathfind.py -dijkstra`
 
+## Arguments
+Beyond specifying the algorithm to use, you can set window size, grid density and line width:\
+`python pathfind.py [algorithm] [window size] [grid density] [line width]`
+
 ## Controls
 |Key|Function|
 |-|-|
