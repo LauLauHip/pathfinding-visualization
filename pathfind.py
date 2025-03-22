@@ -15,7 +15,7 @@ window_size = 900
 density = 50
 line_width = 2
 
-if len(sys.argv) == 4:
+if len(sys.argv) == 5:
     window_size = int(sys.argv[2])
     density = int(sys.argv[3])
     line_width = int(sys.argv[4])
