@@ -5,11 +5,8 @@ def initialize(grid: core.Grid):
     end_node = grid.grid[grid.end[1]][grid.end[0]]
     start_node.g = 0
     start_node.h = manhattan_distance(start_node.pos, end_node.pos)
-    start_node.f = 0
+    start_node.f = start_node.h
     start_node.explored = False
-
-def get_t(node: core.Node):
-    return node.f
 
 def manhattan_distance(pos1, pos2) -> int:
     dist1 = pos2[0] - pos1[0]
@@ -22,7 +19,7 @@ def explore_next_node(grid: core.Grid) -> bool:
     if len(unexplored_nodes) <= 0:
         return True
 
-    next_node = sorted(unexplored_nodes, key=get_t)[0]
+    next_node = sorted(unexplored_nodes, key=lambda node: (node.f, node.h))[0]
 
     next_node.set_explored(True)
 
